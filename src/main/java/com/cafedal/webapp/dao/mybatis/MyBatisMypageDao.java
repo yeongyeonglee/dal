@@ -31,10 +31,6 @@ public class MyBatisMypageDao implements MypageDao {
       return result;
    }
 
-
-
-
-
    @Override
    public Mypage getCafe(String id) {
       MypageDao mypageDao = sqlSession.getMapper(MypageDao.class);
@@ -51,6 +47,9 @@ public class MyBatisMypageDao implements MypageDao {
    
       return listcafe;
    }
+
+
+	
 
 }
 

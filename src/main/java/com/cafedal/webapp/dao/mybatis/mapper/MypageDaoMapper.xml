@@ -20,4 +20,5 @@
   <select id="getCafe" resultType="com.cafedal.webapp.entity.Mypage">
        select cafename from memberview where id=#{id}
   </select>
+  
 </mapper>

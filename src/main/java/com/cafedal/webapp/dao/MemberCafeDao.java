@@ -21,5 +21,15 @@ public interface MemberCafeDao  {
 
 	int insert(String memberid, String cafecode);
 
+	List<MemberCafe> getListByMemberId2(String memberid);
+
+	int delete(String memberid, String cafecode);
+
+	int delete(String num, String memberid, String cafecode);
+
+	int delete(MemberCafe memberCafe);
+
+
+
 }
 

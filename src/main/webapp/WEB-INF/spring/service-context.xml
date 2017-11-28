@@ -22,6 +22,7 @@
 	</bean>
 	
 	<!-- DAO 객체들 -->
+	<bean class="com.cafedal.webapp.dao.mybatis.MyBatisManageDao"/>
 	<bean class="com.cafedal.webapp.dao.mybatis.MyBatisCmtDao2"/>
 	<bean class="com.cafedal.webapp.dao.mybatis.MyBatisCmtDao1"/>
 	<bean class="com.cafedal.webapp.dao.mybatis.MyBatisCafeDao"/>

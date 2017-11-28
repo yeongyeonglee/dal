@@ -1,16 +1,27 @@
 package com.cafedal.webapp.entity;
 
-public class Mypage extends Member {
+public class Manage extends Member {
+	String role;
 	String code;
 	String cafename;
 
-	public Mypage() {
+	public Manage() {
 	}
 
-	public Mypage(String code, String cafename) {
+	public Manage(String role, String code, String cafename) {
 		super();
+		this.role = role;
 		this.code = code;
 		this.cafename = cafename;
+	}
+
+	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public String getCode() {

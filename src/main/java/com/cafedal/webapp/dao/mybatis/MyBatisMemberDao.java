@@ -77,4 +77,22 @@ public class MyBatisMemberDao implements MemberDao {
 
         return list;
 	}
+
+	@Override
+	public Member getib(String id) {
+		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
+	    Member member = memberDao.getib(id);
+	      
+	    return member;
+	}
+
+	@Override
+	public List<Member> getUseListRole(String id) {
+		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
+		List<Member> list = memberDao.getUseListRole(id);
+	      
+	    return list;
+	}
+
+
 }

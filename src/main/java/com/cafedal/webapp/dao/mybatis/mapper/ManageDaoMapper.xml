@@ -3,22 +3,22 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="com.cafedal.webapp.dao.MypageDao">
+<mapper namespace="com.cafedal.webapp.dao.ManageDao">
 
   <!-- <select id="getUseList" resultType="com.cafedal.webapp.entity.Member">
       select id,pwd,name,mail,birth from member where id=#{id}
    </select> -->
    
-   <select id="getUseListCafe" resultType="com.cafedal.webapp.entity.Mypage">
-      select cafename from memberview where id=#{id}
+   <select id="getUseListCafe" resultType="com.cafedal.webapp.entity.Manage">
+      select cafename from memberview where role='ROLE_USER'
    </select>
    
   <!-- <select id="get" resultType="com.cafedal.webapp.entity.Member">
        select id, pwd, name, mail, birth from member where id=#{id}
   </select> -->
   
-  <select id="getCafe" resultType="com.cafedal.webapp.entity.Mypage">
-       select cafename from memberview where id=#{id}
+  <select id="getCafe" resultType="com.cafedal.webapp.entity.Manage">
+       select cafename from memberview where role='ROLE_USER'
   </select>
   
 </mapper>

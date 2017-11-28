@@ -28,6 +28,12 @@ public interface MemberDao  {
     Member getc(String id);
 
     List<Member> getUseList(String id);
+    
+    List<Member> getUseListRole(String id);
+
+	Member getib(String id);
+
+
 
 }
 
