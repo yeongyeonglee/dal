@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cafedal.webapp.dao.UseNoticeDao">
+	<select id="getUseList" resultType="com.cafedal.webapp.entity.UseNotice">
+		select * from useinfo
+		where ${param2} like '%${param3}%'
+		order by num asc
+		limit ${(param1-1)*10}, 10
+	</select>
+
+	<select id="get" resultType="com.cafedal.webapp.entity.UseNotice">
+		select * from useinfo where num=#{num}
+	</select>
+	<select id="getPrev" resultType="com.cafedal.webapp.entity.UseNotice">
+		select * from useinfo
+		where num &lt; CAST(#{num} AS UNSIGNED)
+		order by num desc
+		limit 1;
+	</select>
+	<select id="getNext" resultType="com.cafedal.webapp.entity.UseNotice">
+		select * from useinfo
+		where num &gt; CAST(#{num} AS UNSIGNED)
+		order by num asc
+		limit 1
+	</select>
+
+	<insert id="insert" parameterType="com.cafedal.webapp.entity.UseNotice">
+		<selectKey order="BEFORE" keyProperty="num" resultType="int">
+			select ifnull(max(cast(num as unsigned)),0) +1 from useinfo
+		</selectKey>
+
+		insert into useinfo(num, utitle, ucontent, cname,cafecode,hit)
+		value(#{num}, #{utitle}, #{ucontent}, #{cname},#{cafecode},"0")
+	</insert>
+	<update id="update" parameterType="com.cafedal.webapp.entity.UseNotice">
+		UPDATE useinfo SET utitle= #{utitle}, ucontent=#{ucontent} where
+		num=#{num}
+	</update>
+	
+	<delete id="delete" parameterType="com.cafedal.webapp.entity.UseNotice">
+	delete from useinfo where num=#{num}
+	
+	</delete>
+	
+	<update id="updateHit" parameterType="com.cafedal.webapp.entity.UseNotice">
+		update useinfo set hit = hit+1 where num=#{num}
+	</update>
+
+</mapper>

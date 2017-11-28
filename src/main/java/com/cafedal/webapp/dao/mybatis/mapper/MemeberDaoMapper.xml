@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.cafedal.webapp.dao.MemberDao">
+  <insert id="insert" parameterType="com.cafedal.webapp.entity.Member">
+	insert into member(id, name, pwd, mail, birth, role, cafes)
+	values(#{id}, #{name}, #{pwd}, #{mail}, #{birth}, "ROLE_USER", #{cafes})
+  </insert>	
+  
+  <select id="Login" resultType="com.cafedal.webapp.entity.Member">
+  	select id, pwd from member where id=#{id} and pwd=#{pwd}
+  </select>
+  
+  <select id="get" resultType="com.cafedal.webapp.entity.Member">
+  	select id from member where id=#{id}
+  </select>
+  
+  <select id="sameCheckId" parameterType="com.cafedal.webapp.entity.Member" resultType="Integer">
+  	select count(*) from member where id=#{id}
+  </select>
+  
+  <select id="checkPw" resultType="com.cafedal.webapp.entity.Member">
+  	select count(*) from member where id=#{id} and pwd=#{pwd}
+  </select>
+  
+  <update id="update" parameterType="com.cafedal.webapp.entity.Member">
+  	update member set pwd=#{pwd}, name=#{name}, mail=#{mail}, cafes=#{cafes} where id=#{id}
+  </update>
+  
+  <select id="getUseList" resultType="com.cafedal.webapp.entity.Member">
+      select id,pwd,name,mail,birth from member where id=#{id}
+  </select>
+   
+  <select id="getc" resultType="com.cafedal.webapp.entity.Member">
+       select id, pwd, name, mail, birth from member where id=#{id}
+  </select>
+</mapper>

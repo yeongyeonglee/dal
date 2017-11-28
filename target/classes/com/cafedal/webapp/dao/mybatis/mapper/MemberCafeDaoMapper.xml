@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.cafedal.webapp.dao.MemberCafeDao">
+  <select id="getListByMemberId" resultType="com.cafedal.webapp.entity.MemberCafe">
+	       select * from member where id=#{id};
+  </select>
+  <insert id="insert" parameterType="com.cafedal.webapp.entity.MemberCafe">
+		   insert into membercafe(num, memberid, cafecode)
+		   values(
+		   (select ifnull(max(cast(num as unsigned)),0)+1 from membercafe m),
+		   #{memberid}, 
+		   #{cafecode})
+  </insert>	
+</mapper>

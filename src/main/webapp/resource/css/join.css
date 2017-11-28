@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+.register{
+	margin-top: 20px;
+	min-width: 900px;
+    min-height: 1000px;
+}
+
+.imgbox {
+	max-width: 400px;
+	min-height: 160px;
+	margin: auto;
+	margin-top: 20px;
+	padding-top: 60px;
+}
+
+.logo{
+	margin-left: 200px;
+}
+
+.head{
+	max-width: 200px;
+    min-height: 60px;
+	position: relative;
+	margin-left: 35px;
+	color : 
+}
+
+.container {
+	box-shadow: 0 0 20px black;
+	max-width: 760px;
+	min-height: 800px;
+	margin: auto;
+	margin-top: 70px;
+	padding-top: 60px;
+    padding-left: 30px;
+}
+
+form{
+	margin-left: 30px;
+}
+
+input{
+	height: 30px;
+    width: 400px;
+    border: hidden;
+}
+
+.jointb{
+	table-layout: fixed;
+}
+
+.jointb  th{
+	table-layout: fixed;
+	background-color: #FF9F9E;
+	 width: 150px;
+	 height: 50px;
+	 vertical-align: middle;
+	 text-align: left;
+	 padding-left: 10px;
+	 
+}
+
+.jointb  td{
+	table-layout: fixed;
+	 vertical-align: middle;
+	 padding-left: 5px;
+	 width: 500px;
+	 border-bottom: 1px solid #FF9F9E;
+
+}
+
+
+/*--------------checkbox css---------*/
+
+.center-on-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+label {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
+  line-height: 36px;
+  cursor: pointer;
+}
+label::before {
+  content: " ";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #FFA48E;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Checked */
+input[type="checkbox"]:checked + label,
+input[type="radio"]:checked + label {
+  padding-left: 10px;
+  color: #fff;
+}
+input[type="checkbox"]:checked + label::before,
+input[type="radio"]:checked + label::before {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFA48E;
+}
+/* Transition */
+label,
+label::before {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
+/*---------checkbox css--- fin---------*/
+
+
+/*---------button css----------------*/
+.btn{
+    margin-top: 60px;
+    margin-left: 150px;
+    width: 150px;
+    height: 50px;
+    background-color: #BA776F;
+    color: #ffffff;
+    cursor: pointer;
+    border-color: white;
+    font-weight: bold;
+}
+
+.btn:hover{
+	background-color: #F29796;
+	border-coler : #BA776F;
+	color: #402827;
+	font-weight: bold;
+}
+
+.cancel-btn{
+	margin-right: -30px;
+}
+
+/* .join-btn{
+	margin-right: 20px;
+}	 */
+
+
+/*---------button css-----fin--------*/
+
+.form__field{
+	max-width: 100px;
+	max-height: 30px;
+}

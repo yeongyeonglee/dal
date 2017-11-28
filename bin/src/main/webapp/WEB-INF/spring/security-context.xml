@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans">
+	<http>
+		<!-- <intercept-url access="hasRole('ROLE_ADMIN')" pattern="/admin/**" /> -->
+		<intercept-url access="hasRole('ROLE_USER')" pattern="/customer/*" />
+<!-- 		<intercept-url access="hasRole('ROLE_USER')" pattern="/mypage/*" /> -->
+		<form-login default-target-url="/main/calendar" login-page="/member/login" />
+		<logout logout-success-url="/member/login" />
+	</http>
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service
+				authorities-by-username-query="select id, 'ROLE_USER' authority from member where id=?"
+				users-by-username-query="select `id`, pwd `password`, 1 enabled from member where id = ?"
+				data-source-ref="dataSource" />
+
+		</authentication-provider>
+	</authentication-manager>
+</beans:beans>

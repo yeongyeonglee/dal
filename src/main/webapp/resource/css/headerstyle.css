@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+#header {
+	height: 200px;
+	z-index: 100;
+	width: 100%;
+	top: 100;
+	left: 0;
+}
+
+#header>.content-container {
+	position: relative;
+}
+
+#header>.content-container>#member-menu, #logo {
+	position: absolute;
+}
+
+#logo img {
+	width: 161px;
+	height: 134px;
+	margin-left: 850px;
+}
+
+/* ----------------member-menu--------------------------------------  */
+
+#member-menu {
+	right: 0px;
+	top: 17px;
+	/* display: inline-block; */
+	margin-right: 100px;
+}
+
+#member-menu  li {
+	float: left;
+	/* padding-left: 50px; */
+	list-style: none;
+	
+}
+
+#member-menu  a {
+	font-family: 맑은고딕, 고딕, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	display: inline-block;
+}
+
+#logout {
+	margin-right: 30px;
+	font-family: 맑은고딕, 고딕, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	display: inline-block;
+	border: none;
+	background : white;
+	cursor: pointer;
+}
+
+
+#mypage{
+	margin-right: 100px;
+}
+
+
+
+
+
+
+
+

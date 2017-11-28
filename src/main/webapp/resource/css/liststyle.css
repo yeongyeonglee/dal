@@ -1,0 +1,585 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+/* --- for all three examples ----*/
+.nav {
+	text-align: center;
+	overflow: hidden;
+	margin: 2em auto;
+	margin-left: 525px;
+	width: 1000px;
+	position: relative;
+}
+
+.nav a {
+	display: block;
+	position: relative;
+	float: left;
+	padding: 1em 2em 3em 2em;
+	/*    width: 25%; */
+	text-decoration: none;
+	color: #393939;
+	-webkit-transition: .7s;
+	-moz-transition: .7s;
+	-o-transition: .7s;
+	-ms-transition: .7s;
+	transition: .7s;
+}
+
+.nav a:hover {
+	color: #c6342e;
+}
+
+.effect {
+	position: inherit;
+	left: -12.5%;
+	-webkit-transition: 0.7s ease-in-out;
+	-moz-transition: 0.7s ease-in-out;
+	-o-transition: 0.7s ease-in-out;
+	-ms-transition: 0.7s ease-in-out;
+	transition: 0.7s ease-in-out;
+}
+/* 화살표 이동 */
+/* all */
+.nav a:nth-child(1):hover ~ .effect {
+	left: 4%;
+}
+/* GongCha */
+.nav a:nth-child(2):hover ~ .effect {
+	left: 14.5%;
+}
+/* Starbucks */
+.nav a:nth-child(3):hover ~ .effect {
+	left: 27%;
+}
+/* Ediya */
+.nav a:nth-child(4):hover ~ .effect {
+	left: 38.5%;
+}
+/* CoffeeBean */
+.nav a:nth-child(5):hover ~ .effect {
+	left: 50.4%;
+}
+/* Twosome */
+.nav a:nth-child(6):hover ~ .effect {
+	left: 64%;
+}
+/* Hollys */
+.nav a:nth-child(7):hover ~ .effect {
+	left: 76%;
+}
+
+/* ----- heart example -----*/
+.ph-heart-nav {
+	font-family: "Unica One";
+	font-size: 1em;
+	text-shadow: 0 1px 0 white;
+}
+
+.ph-heart-nav .effect, .ph-heart-nav a:after, .ph-heart-nav a:before {
+	background: url('../images/heart.png') no-repeat;
+}
+
+.ph-heart-nav .effect {
+	position: absolute;
+	bottom: 26px;
+	background-position: 0 0;
+	height: 8px;
+	width: 62px;
+	margin-left: -31px;
+}
+
+.ph-heart-nav a:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	background-position: -62px 0;
+	height: 20px;
+	width: 11px;
+	margin-left: -11px;
+}
+
+.ph-heart-nav a:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	z-index: 1;
+	background-position: -73px 0;
+	height: 20px;
+	width: 11px;
+}
+
+/*------------------------------------------------*/
+.hidden {
+	display: none;
+}
+
+fieldset {
+	border-style: none;
+}
+
+.list-field {
+	width: 330px;
+	height: 35px;
+	border-style: none;
+	margin-left: 1070px;
+	margin-top: 35px;
+}
+
+table.table-garo2 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 13px;
+	background: #fff;
+	margin: 60px;
+	border-collapse: collapse;
+	text-align: center;
+	border-bottom: 5px solid #592d00;
+	top: 50%;
+	table-layout: fixed;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+
+table.table-garo2 {
+	width: 900px;
+	border-bottom: 1px solid #a9a9a9;
+	margin-left: 490px;
+	margin-top: 0px;
+}
+
+table .table-garo2 :hover a {
+	background-color: #fff;
+}
+
+table.table-garo2 :hover {
+	color: black;
+}
+
+table.table-garo2 .tit :hover {
+	font-weight: bold;
+}
+
+.table-garo2 tr th, .tabe-garo2 .tr .th {
+	background: #f8eae2 url("../images/bg-title-sp.png") no-repeat left
+		center;
+}
+
+table.table-garo2 th {
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	padding: 5px 3px;
+	border-bottom: 1px solid #a9a9a9;
+}
+
+table.table-garo2 td {
+	border-bottom: 1px solid #ccc;
+	color: black;
+	cursor: pointer;
+	padding: 6px 8px;
+}
+
+.tit {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.con {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
+}
+
+.con a {
+	margin-left: 45px;
+	text-decoration: none;
+	color: black;
+	font-size: 14px;
+}
+
+.con a:hover {
+	color: black;
+	font-weight: bold;
+}
+
+.w60 {
+	min-width: 20px;
+}
+
+.w100 {
+	width: 400px;
+}
+
+.w70 {
+	width: 300px;
+}
+/*-------------------------------------------------------------*/
+.main-tit {
+	margin-top: 30px;
+	font-size: 20px;
+	margin-left: 500px;
+	font-size: 20px;
+}
+
+.path {
+	margin-left: 520px;
+	margin-top: 50px;
+}
+
+.path2 {
+	display: inline-block;
+	margin-left: 540px;
+}
+
+.path2   ul {
+	list-style: none;
+}
+
+.path2   li {
+	float: left;
+	font-size: 15px;
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+/*--------------------------------------------------------------*/
+.list-tit {
+	font-family: 'Jeju Gothic', serif;
+	margin-left: 490px;
+	font-size: 30px;
+	/* font-weight: bold; */
+	margin-top: -20px;
+}
+
+/* .list {
+   display: inline-block;
+   padding-left: 800px;
+}
+
+.listnum a, .listnum  li a {
+   text-decoration: none;
+   color: #7b4122;
+}
+
+.listnum {
+   display: inline-block;
+   padding-left: 850px;
+}
+
+.listnum  ul {
+   list-style: none;
+   margin-top: -37px;
+}
+
+.listnum  li {
+   float: left;
+   padding-left: 9px;
+   font-weight: bold;
+}
+ */
+
+/* .reg {
+   padding-left: 1350px;
+   margin-top: -45px;
+}
+
+.reg a {
+   text-decoration: none;
+   font-size: 13px;
+   font-weight: bold;
+   color: #7b4122;
+} */
+.location {
+	display: flex;
+	list-style: none;
+}
+
+/*----------------------------------------------------------*/
+.reg {
+	margin-left: 1325px;
+	margin-top: -45px;
+	background-color: #e8bfaa;
+	padding: 7px;
+	border: none;
+	border-radius: 40px;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	border-radius: 40px;
+}
+
+.reg:hover {
+	background-color: #7b4122;
+}
+
+.eff-1 {
+	text-decoration: none;
+	padding: 9px;
+	margin: 2px;
+	font-size: 12px;
+	color: black;
+	font-weight: bold;
+}
+
+.eff-1:hover {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+/*------------------검색폼 css---------------------------------------------*/
+.d1 {
+	width: 900px;
+	margin-left: 490px;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+.d1 select {
+	width: 70px;
+	border: 2px solid #ad5a5a;
+	border-radius: 5px;
+	outline: none;
+	margin-left: 270px;
+	margin-top: 15px;
+	color: #605e5e;
+	height: 42px;
+}
+
+.d1 .btn-search {
+	width: 330px;
+	height: 42px;
+	padding-left: 10px;
+	border: 2px solid #ad5a5a;
+	border-radius: 5px;
+	outline: none;
+	margin: 0 auto;
+	color: #605e5e;
+}
+
+.d1 .btn-button {
+	top: 0px;
+	right: 0px;
+	width: 42px;
+	height: 42px;
+	border: none;
+	background: #ad5a5a;
+	color: #ffffff;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.d1 .btn-button:hover {
+	background: #602f2f;
+}
+
+/*---------등록 페이지 css-------------------------------------------*/
+.reg-tit {
+	margin-top: 30px;
+	margin-bottom: 20px;
+	padding-left: 850px;
+	font-size: 20px;
+	font-family: 'Jeju Gothic', serif;
+}
+
+fieldset .reg-field {
+	border-style: none;
+	width: 500px;
+	height: 400px;
+}
+
+.buttons {
+	margin-left: 890px;
+	margin-top: -30px;
+}
+
+.buttons a {
+	text-decoration: none;
+	font-size: 13.33px;
+	color: #ffffff;
+	background: #7b4122;
+	padding: 1.1px 5px 1.1px 5px;
+}
+
+.table-garo2 input[type="text"] {
+	width: 400px;
+	height: 20px;
+}
+
+/*------------detail--------------------*/
+.tit-content {
+	margin-left: 460px;
+	padding-bottom: 10px;
+	width: 1000px;
+	text-align: left;
+	border-bottom: 1px solid #c0c0c0;
+	border-top: 3px solid #7b4122;
+	display: inline-block;
+	background-color: #fdfdfd;
+}
+
+.tit-content2 {
+	padding-left: 20px;
+	font-size: 12px;
+	font-weight: bold;
+	color: gray;
+}
+
+.tit-content ul {
+	margin-left: -38px;
+	list-style: none;
+}
+
+.tit-content li {
+	float: left;
+}
+
+.part {
+	padding-right: 10px;
+	border-right: 1px solid #e9e9e9;
+}
+
+.inq_cnt {
+	padding-left: 10px;
+}
+
+.part2 {
+	margin-left: 650px;
+}
+
+.path3 {
+	display: inline-block;
+	margin-left: 850px;
+	margin-top: -20px;
+}
+
+.path3   ul {
+	list-style: none;
+}
+
+.path3   li {
+	float: left;
+	font-size: 15px;
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+.path3  a {
+	text-decoration: none;
+	font-size: 13.33px;
+	color: #ffffff;
+	background: #7b4122;
+	padding: 1.1px 5px 1.1px 5px;
+}
+
+.prep-next {
+	margin-left: 770px;
+	margin-top: 40px;
+}
+
+.prep-next a {
+	color: black;
+	text-decoration: none;
+}
+
+.prep-next a:hover {
+	font-weight: bold;
+	color: #7b4122;
+}
+
+.prep-next2 {
+	margin-left: 860px;
+	margin-top: 40px;
+}
+
+.prep-next2 a {
+	color: black;
+	text-decoration: none;
+}
+
+.prep-next2 a:hover {
+	font-weight: bold;
+	color: #7b4122;
+}
+
+/*---------댓글 css----------------------------*/
+.listcom {
+	width: 500px;
+	margin-left: 720px;
+}
+
+.com1 {
+	font-size: 15px;
+}
+
+.com2 {
+	font-size: 17px;
+	min-height: 500px;
+}
+
+.com3 {
+	font-size: 10px;
+	min-height: 30px;
+	min-width: 30px;
+}
+
+.com3 a {
+	min-width: 20px;
+}
+
+.comform {
+	width: 900px;
+	margin-left: 500px;
+	text-align: center;
+	margin-top: 20px;
+	padding-right: 10px;
+	margin-bottom: 100px;
+}
+
+.comcontent {
+	width: 500px;
+	height: 100px;
+	overflow: auto;
+}
+
+.comform .combtn {
+	height: 100px;
+	width: 50px;
+	margin-left: inherit;
+	margin-top: -100px;
+	background-color: #aa5555;
+	color:#fff;
+	border: none;
+
+ 
+ 
+}
+
+.comform .combtn:hover {
+	background-color: #dab4b4;
+	color:#400040;
+}
+
+
