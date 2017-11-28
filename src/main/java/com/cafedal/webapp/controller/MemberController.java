@@ -44,6 +44,8 @@ public class MemberController {
 	}
 	 
 	
+	
+	
 
 	
 	@RequestMapping(value="join", method=RequestMethod.POST)
