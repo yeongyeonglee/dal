@@ -177,7 +177,7 @@ table.table-garo2 .tit :hover {
 }
 
 .table-garo2 tr th, .tabe-garo2 .tr .th {
-	background: #f8eae2 url("../images/bg-title-sp.png") no-repeat left
+	background: #f8eae2 
 		center;
 }
 
@@ -232,6 +232,158 @@ table.table-garo2 td {
 .w70 {
 	width: 300px;
 }
+
+/*-------관리 정보 테이블**-************/
+ .table-garo-admin {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:12px;
+	text-shadow: 1px 1px 0px #fff;
+	background:#eaebec;
+	margin:20px;
+	border:#ccc 1px solid;
+	width: 1000px;
+	margin-left: 490px;
+
+
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+ .table-garo-admin th {
+	padding:15px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+ .table-garo-admin th:first-child{
+	text-align: left;
+	padding-left:20px;
+}
+.table-garo-admin .table-garo-admin tr:first-child th:first-child{
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}
+ .table-garo-admin tr:first-child th:last-child{
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}
+ .table-garo-admin tr{
+	text-align: center;
+	padding-left:20px;
+}
+ .table-garo-admin tr td:first-child{
+	text-align: left;
+	padding-left:20px;
+	border-left: 0;
+
+}
+ .table-garo-admin tr td {
+	padding:12px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	
+	
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+ .table-garo-admin tr.even td{
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+
+.reg-admin {
+	margin-left: 1430px;
+	/* margin-top: -px; */
+	background-color: #c0c0c0;
+	padding: 7px;
+	border: none;
+	border-radius: 40px;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	border-radius: 40px;
+}
+
+.reg-admin:hover {
+	background-color: #400040;
+	color: #fff;
+}
+
+.eff-1 {
+	text-decoration: none;
+	padding: 9px;
+	margin: 2px;
+	font-size: 12px;
+	color: black;
+	font-weight: bold;
+}
+
+.eff-1:hover {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+
+.d1-admin {
+	width: 900px;
+	margin-left: 500px;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+.d1-admin select {
+	width: 70px;
+	border: 2px solid #808080;
+	border-radius: 5px;
+	outline: none;
+	margin-left: 270px;
+	margin-top: 15px;
+	color: #605e5e;
+	height: 42px;
+}
+
+.d1-admin  .btn-search {
+	width: 330px;
+	height: 42px;
+	padding-left: 10px;
+	border: 2px solid #808080;
+	border-radius: 5px;
+	outline: none;
+	margin: 0 auto;
+	color: #605e5e;
+}
+
+.d1-admin  .btn-button {
+	top: 0px;
+	right: 0px;
+	width: 42px;
+	height: 42px;
+	border: none;
+	background: #808080;
+	color: #ffffff;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.d1-admin .btn-button:hover {
+	background: #3c3c3c;
+}
+
+
+
+
+
 /*-------------------------------------------------------------*/
 .main-tit {
 	margin-top: 30px;
@@ -274,22 +426,18 @@ table.table-garo2 td {
    display: inline-block;
    padding-left: 800px;
 }
-
 .listnum a, .listnum  li a {
    text-decoration: none;
    color: #7b4122;
 }
-
 .listnum {
    display: inline-block;
    padding-left: 850px;
 }
-
 .listnum  ul {
    list-style: none;
    margin-top: -37px;
 }
-
 .listnum  li {
    float: left;
    padding-left: 9px;
@@ -301,7 +449,6 @@ table.table-garo2 td {
    padding-left: 1350px;
    margin-top: -45px;
 }
-
 .reg a {
    text-decoration: none;
    font-size: 13px;
@@ -581,5 +728,3 @@ fieldset .reg-field {
 	background-color: #dab4b4;
 	color:#400040;
 }
-
-

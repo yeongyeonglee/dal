@@ -59,7 +59,7 @@
 
 
 <h3 class="hidden">할인정보 목록</h3>
-<table class="table-garo2">
+<table class="table-garo-admin">
    <thead>
       <tr>
          <th class="w60">카페</th>
@@ -106,7 +106,7 @@
    </tbody>
 </table>
 
-<div class="reg">
+<div class="reg-admin">
    <a class="eff-1" href="notice/reg">등록</a>
 </div>
 

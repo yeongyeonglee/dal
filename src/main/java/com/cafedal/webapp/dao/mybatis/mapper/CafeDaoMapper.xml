@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cafedal.webapp.dao.CafeDao">
+   <select id="getUseList" resultType="com.cafedal.webapp.entity.AdminCafe">
+      select * from cafe
+      where ${param2} like '%${param3}%' 
+      order by name asc
+      limit ${(param1-1)*10}, 10
+   </select> 
+   
+   
+    <insert id="insert" parameterType="com.cafedal.webapp.entity.AdminCafe">
+
+   <selectKey order="BEFORE" keyProperty="code" resultType="String">
+      select ifnull(max(cast(code as unsigned)), 0) +1 from cafe
+   </selectKey>
+   
+   insert into cafe(code,name)
+   values(#{code}, #{name})
+   
+   </insert>
+   
+   <delete id="delete" parameterType="com.cafedal.webapp.entity.AdminCafe" >
+   DELETE FROM cafe WHERE code=#{code};
+   </delete>
+   
+  <!--  <select id="get" resultType="com.cafedal.webapp.entity.DcInfo">
+      select * from dcinfo where num=#{num}
+   </select>
+   
+      <select id="getPrev" resultType="com.cafedal.webapp.entity.DcInfo">   
+       select * from dcinfo where num &lt; cast(#{num} as unsigned) and cafecode!=0 order by num desc limit 1
+   </select>
+      
+   <select id="getNext" resultType="com.cafedal.webapp.entity.DcInfo">   
+       select * from dcinfo where num &gt; cast(#{num} as unsigned) and cafecode!=0 order by num asc limit 1
+   </select>
+
+    <insert id="insert" parameterType="com.cafedal.webapp.entity.DcInfo">
+
+   <selectKey order="BEFORE" keyProperty="num" resultType="int">
+      select ifnull(max(cast(num as unsigned)), 0) +1 from dcinfo
+   </selectKey>
+   
+   insert into dcinfo(num, cafecode, cname, dtitle, dcontent, startdate, finishdate, hit)
+   values(#{num}, #{cafecode}, #{cname}, #{dtitle}, #{dcontent}, #{startdate}, #{finishdate}, "0")
+   
+   </insert>
+   
+   <update id="update" parameterType="com.cafedal.webapp.entity.DcInfo">
+      update dcinfo set dtitle= #{dtitle}, dcontent=#{dcontent}, startdate=#{startdate}, finishdate=#{finishdate} where
+      num=#{num}
+   </update>
+   
+   <delete id="delete" parameterType="com.cafedal.webapp.entity.DcInfo">
+       delete from dcinfo where num=#{num}
+
+   </delete>
+   
+   <update id="updateHit" parameterType="com.cafedal.webapp.entity.DcInfo">
+      update dcinfo set hit = hit+1 where num=#{num} and cafecode != 0
+   </update> -->
+   
+
+   </mapper>
