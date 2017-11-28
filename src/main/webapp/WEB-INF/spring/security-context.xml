@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/security"
-	xmlns:beans="http://www.springframework.org/schema/beans">
-	<http>
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/security"
+   xmlns:beans="http://www.springframework.org/schema/beans">
+   <http>
 
-		<intercept-url pattern="/customer/**" access="hasRole('ROLE_USER')" />
-		<intercept-url pattern="/mypage/*" access="hasRole('ROLE_USER')" />
-		<intercept-url pattern="/main/*" access="hasRole('ROLE_USER')" />
-		<!-- <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/> -->
+      <intercept-url pattern="/customer/**" access="hasRole('ROLE_USER')" />
+      <intercept-url pattern="/mypage/*" access="hasRole('ROLE_USER')" />
+      <intercept-url pattern="/main/*" access="hasRole('ROLE_USER')" />
+      <!-- <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/> -->
 
-		<form-login default-target-url="/main/calendar" login-page="/member/login" />
-		<form-login default-target-url="/admin/dcinfo/notice"
-			login-page="/member/login2" />
+      <form-login default-target-url="/main/calendar" login-page="/member/login" />
+      <form-login default-target-url="/admin/dcinfo/notice"
+         login-page="/member/login2" />
 
-		<logout logout-success-url="/member/login" />
+      <logout logout-success-url="/member/login" />
 
-	</http>
+   </http>
 
-	<authentication-manager>
-		<authentication-provider>
-			<jdbc-user-service
-				authorities-by-username-query="select id, 'ROLE_USER' authority from member where id=?"
-				users-by-username-query="select `id`, pwd `password`, 1 enabled from member where id=?"
-				data-source-ref="dataSource" />
-		</authentication-provider>
-	</authentication-manager>
+   <authentication-manager>
+      <authentication-provider>
+         <jdbc-user-service
+            authorities-by-username-query="select id, 'ROLE_USER' authority from member where id=?"
+            users-by-username-query="select `id`, pwd `password`, 1 enabled from member where id=?"
+            data-source-ref="dataSource" />
+      </authentication-provider>
+   </authentication-manager>
 </beans:beans>
