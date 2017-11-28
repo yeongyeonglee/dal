@@ -71,18 +71,32 @@
    </thead>
    <tbody>
     <!-- 공지 ------------------------------------------------ -->
-    <c:forEach var="a" items="${nlist}">
-         <tr>
-            
+    
+         <tr>           
+         <c:forEach var="a" items="${nlist}">
             <td class="con w100"><a href="notice/${a.num}">${a.dtitle}</td>
-           
-         </tr>
-      </c:forEach>
+           	<%-- <c:forEach var="cmtlist" items="${cmtlist}">
+				<td>댓글 ${cmtlist.count}</td>
+			</c:forEach> --%>
+      
+ 
+
+      
+	</c:forEach>
+      </tr>
+      
      <!------------------------------------------------------- -->
       <c:forEach var="n" items="${list}">
          <tr>
             <td>${n.cname}</td>
-            <td class="con w100"><a href="notice/${n.num}">${n.dtitle}</td>
+            <td class="con w100"><a href="notice/${n.num}">${n.dtitle} 
+                <%-- <c:forEach var="cmtlist" items="${cmtlist}">[${cmtlist.count}]</c:forEach> --%>
+            <%--     <c:forEach var="cmtlist" items="${cmtlist}">
+	                <c:if test="${cmtlist.count != 0}">
+	    			[${cmtlist.count}]
+	    			</c:if>
+	    	    </c:forEach> --%>
+            </a></td>
             <td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.startdate}"/></td>   
                <td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.finishdate}"/></td>   
             
@@ -115,8 +129,7 @@
    var="lastNum"
    value="${fn:substringBefore(count%10 ==0 ? count/10 : count/10+1, '.')}" />
    
-   
-
+  
    <div class="listnum">
       <ul class="listnum">
          <c:forEach var="i" begin="0" end="4">
@@ -138,9 +151,6 @@
          </c:if>
       </div>
    </div>
-
-
-
 
 
 </main>

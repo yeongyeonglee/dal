@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import com.cafedal.webapp.dao.CmtDao1;
+import com.cafedal.webapp.dao.CmtDao2;
 import com.cafedal.webapp.dao.UseComDao;
 import com.cafedal.webapp.dao.UseNoticeDao;
+import com.cafedal.webapp.entity.CmtView1;
+import com.cafedal.webapp.entity.CmtView2;
 import com.cafedal.webapp.entity.UseCom;
 import com.cafedal.webapp.entity.UseNotice;
 
@@ -29,6 +32,9 @@ public class UseInfoController {
 	
 	@Autowired
 	private UseComDao usecomDao;
+	
+	@Autowired
+	private CmtDao2 cmtDao2;
 
 
 	@RequestMapping("notice")
@@ -51,8 +57,8 @@ public class UseInfoController {
 	@RequestMapping(value = "notice/{num}", method = RequestMethod.GET)
 	public String noticeDetail(@PathVariable("num") int num, Model model, UseCom usecom,Principal principal) {
 
-		String id = principal.getName();
-		System.out.println("아이디 디테일:"+id);
+		//String id = principal.getName();
+		//System.out.println("아이디 디테일:"+id);
 		
 		model.addAttribute("n", usenoticeDao.get(num));
 		model.addAttribute("prev", usenoticeDao.getPrev(num));
@@ -64,11 +70,12 @@ public class UseInfoController {
 		
 		System.out.print(num);
 
-		List<UseCom> comlist = usecomDao.getComList(num);
-		model.addAttribute("comlist", comlist);
 
 		model.addAttribute("comnum", usecomDao.get(usecom));
-
+		
+		 List<CmtView2> clist = cmtDao2.getCList(num);
+	     model.addAttribute("clist", clist);
+	     
 		return "admin.useinfo.notice.detail";
 	}
 

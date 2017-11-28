@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cafedal.webapp.dao.CmtDao1;
 import com.cafedal.webapp.dao.DcInfoDao;
-
+import com.cafedal.webapp.entity.CmtView1;
 import com.cafedal.webapp.entity.DcInfo;
 
 
@@ -28,6 +29,9 @@ public class CustomerDcInfoController  {
 
 	  @Autowired
 	   private DcInfoDao dcinfoDao;
+	  
+	  @Autowired
+	   private CmtDao1 cmtDao1;
 	  
 	   @RequestMapping("notice")
 	   public String notice(
@@ -50,6 +54,9 @@ public class CustomerDcInfoController  {
 	      model.addAttribute("n", dcinfoDao.get(num));
 	      model.addAttribute("prev", dcinfoDao.getPrev(num));
 	      model.addAttribute("next", dcinfoDao.getNext(num));
+	      
+	      List<CmtView1> clist = cmtDao1.getCList(num);
+	      model.addAttribute("clist", clist);
 
 	      return "customer.dcinfo.notice.detail";
 	   }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.cafedal.webapp.dao.CmtDao2">
+
+<select resultType="com.cafedal.webapp.entity.CmtView2" id="get"> 
+	 select count from CmtView2 where noticenum=#{noticenum}  
+	
+</select>
+
+<select resultType="com.cafedal.webapp.entity.CmtView2" id="getCList"> 
+	select noticenum, count from CmtView2 where noticenum=#{noticenum} order by noticenum asc 
+</select>
+
+
+<!-- <select resultType="com.cafedal.webapp.entity.CmtView1" id="getCmtList">
+
+</select>
+ -->
+</mapper>

@@ -35,7 +35,12 @@
 			<div class="tit-content2">
 			<ul class="info">
 				<li class="part">${n.cname}</li>
-				<li class="inq_cnt">카페 달</li>
+				<li class="inq_cnt part">카페 달</li>
+				<li class="inq_cnt part">
+					<c:forEach var="clist" items="${clist}">
+						댓글 ${clist.count}
+					</c:forEach>
+			    </li>
 				<li style="margin-left: 780px;">조회수 &nbsp; ${n.hit}</li>
 			</ul>
 		</div>

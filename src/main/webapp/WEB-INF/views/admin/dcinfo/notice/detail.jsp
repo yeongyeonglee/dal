@@ -46,8 +46,13 @@
 			<li class="part">${n.cname}</li>
 			<li class="inq_cnt part"><fmt:formatDate pattern="yyyy-MM-dd"
 					value="${n.startdate}" /></li>
-			<li class="inq_cnt"><fmt:formatDate pattern="yyyy-MM-dd"
+			<li class="inq_cnt part"><fmt:formatDate pattern="yyyy-MM-dd"
 					value="${n.finishdate}" /></li>
+			<li class="inq_cnt part">
+			<c:forEach var="clist" items="${clist}">
+				댓글 ${clist.count}
+			</c:forEach>
+			</li>
 			<li class="part2">조회수 &nbsp; ${n.hit}</li>
 		</ul>
 	</div>
